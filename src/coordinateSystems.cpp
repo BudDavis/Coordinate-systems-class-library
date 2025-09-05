@@ -264,7 +264,7 @@ Cartesian(east,north,up), earthFixed(latitude,longitude,altitude){
 }
 ENU::~ENU(){
 }
-ECF ENU::toECF() throw (std::exception){
+ECF ENU::toECF() {
     double X, Y, Z;
     double lat, lon;
     
@@ -282,7 +282,7 @@ ECF ENU::toECF() throw (std::exception){
     
     return ECF(X,Y,Z);
 }
-LLA ENU::toLLA() throw (std::exception){
+LLA ENU::toLLA() {
     if (!originSet){
         throw std::runtime_error("Cannot convert to ECF, origin not set.");
     }
@@ -319,13 +319,13 @@ Cartesian(downRange,crossRange,above), earthFixed(latitude,longitude,altitude,h)
 }
 DCA::~DCA() {
 }
-ECF DCA::toECF() throw (std::exception){
+ECF DCA::toECF() {
     if (!originSet){
         throw std::runtime_error("Cannot convert to ECF, origin not set.");
     }
     return this->toENU().toECF();
 }
-LLA DCA::toLLA() throw (std::exception){
+LLA DCA::toLLA() {
     if (!originSet){
         throw std::runtime_error("Cannot convert to ECF, origin not set.");
     }
@@ -378,13 +378,13 @@ Spherical(azimuth,elevation,range), earthFixed(latitude,longitude,altitude,h){
 }
 AER::~AER() {
 }
-ECF AER::toECF() throw (std::exception){
+ECF AER::toECF() {
     if (!originSet){
         throw std::runtime_error("Cannot convert to ECF, origin not set.");
     }
     return this->toENU().toECF();
 }
-LLA AER::toLLA() throw (std::exception){
+LLA AER::toLLA() {
     if (!originSet){
         throw std::runtime_error("Cannot convert to ECF, origin not set.");
     }

@@ -226,9 +226,9 @@ public:
     virtual AER toAER(double _latitude, double _longitude, double _altitude, double _heading) = 0; // declare pure virtual function for abstract class
 protected:
     //WGS84
-    static const double a = 6378137.0; //Earth elipsoid semi-major axis in meters
-    static const double e2 = 0.00669437999014; //Earth elipsoid eccentricity squared
-    static const double latTol = 0.00001; //tolerance for latitude convergence
+    static constexpr double a = 6378137.0; //Earth elipsoid semi-major axis in meters
+    static constexpr double e2 = 0.00669437999014; //Earth elipsoid eccentricity squared
+    static constexpr double latTol = 0.00001; //tolerance for latitude convergence
 };
 
 /**
@@ -508,14 +508,14 @@ public:
  * 
  * Throws a standard runtime exception if the origin is not set.
  */
-    ECF toECF(void) throw (std::exception);
+    ECF toECF(void);
 /**
  * @brief Coordinate conversion to Latitude-Longitude-Altitude (LLA) system.
  * @return Instance of LLA.
  * 
  * Throws a standard runtime exception if the origin is not set.
  */
-    LLA toLLA(void) throw (std::exception);
+    LLA toLLA(void);
 /**
  * @brief Coordinate conversion to DownRange-CrossRange-Above (DCA) system.
  * @param _heading: Heading of the DCA frame measured from True North in degrees.
@@ -615,14 +615,14 @@ public:
  * 
  * Throws a standard runtime exception if the origin is not set.
  */
-    ECF toECF(void) throw (std::exception);
+    ECF toECF(void);
 /**
  * @brief Coordinate conversion to Latitude-Longitude-Altitude (LLA) system.
  * @return Instance of LLA.
  * 
  * Throws a standard runtime exception if the origin is not set.
  */
-    LLA toLLA(void) throw (std::exception);
+    LLA toLLA(void);
 /**
  * @brief Coordinate conversion to East_North-Up (ENU) system.
  * @return Instance of ENU.
@@ -719,14 +719,14 @@ public:
  * 
  * Throws a standard runtime exception if the origin is not set.
  */
-    ECF toECF(void) throw (std::exception);
+    ECF toECF(void);
 /**
  * @brief Coordinate conversion to Latitude-Longitude-Altitude (LLA) system.
  * @return Instance of LLA.
  * 
  * Throws a standard runtime exception if the origin is not set.
  */
-    LLA toLLA(void) throw (std::exception);
+    LLA toLLA(void);
 /**
  * @brief Coordinate conversion to East_North-Up (ENU) system.
  * @return Instance of ENU.
